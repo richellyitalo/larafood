@@ -1,0 +1,40 @@
+version: '2'
+services:
+  app:
+    image: richellyitalo/php72apache-with-xdebug:1
+    # build:
+    #   context: .
+    #   dockerfile: ./Dockerfile
+    environment:
+      TZ: America/Sao_Paulo
+      XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 remote_enable=1
+    ports:
+      - '80:80'
+    volumes:
+      - .:/var/www
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password --sql-mode="STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+        - ./docker/mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+  # db:
+  #   image: mysql:5.7
+  #   ports:
+  #     - '6603:3306'
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=654321
+  #     - MYSQL_USER=dbuser
+  #     - MYSQL_PASSWORD=654321
+  #     - MYSQL_DATABASE=dbname
+  #   volumes:
+  #     - 'mysql_data:/var/lib/mysql'
+  #     - ./docker/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+volumes:
+  mysql_data: { driver: local }
