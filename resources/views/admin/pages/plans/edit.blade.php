@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', "Atualizar plano {{ $plan->name }}")
+@section('title', "Atualizar plano {$plan->name}")
 
 @section('content_header')
 <h1>Atualizar {{ $plan->name }}</h1>
