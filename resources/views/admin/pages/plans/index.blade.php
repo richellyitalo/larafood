@@ -33,7 +33,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Preço</th>
-                        <th width="50">Ações</th>
+                        <th width="150">Ações</th>
                     </tr>
                 </thead>
 
@@ -42,7 +42,8 @@
                         <td>{{ $plan->name }}</td>
                         <td>R$ {{ number_format($plan->price, 2, ',', '.') }}</td>
                         <td>
-                        <a href="{{ route('plans.show', $plan->url) }}" class="btn btn-warning">Ver</a>
+                            <a href="{{ route('plans.edit', $plan->url) }}" class="btn btn-info">Editar</a>
+                            <a href="{{ route('plans.show', $plan->url) }}" class="btn btn-warning">Ver</a>
                         </td>
                     </tr>
                 @endforeach

@@ -22,6 +22,8 @@ Route::get('admin/plans/create', 'Admin\PlanController@create')->name('plans.cre
 Route::get('admin/plans/{url}', 'Admin\PlanController@show')->name('plans.show');
 Route::post('admin/plans', 'Admin\PlanController@store')->name('plans.store');
 Route::delete('admin/plans/{url}', 'Admin\PlanController@destroy')->name('plans.destroy');
+Route::get('admin/plans/{url}/edit', 'Admin\PlanController@edit')->name('plans.edit');
+Route::put('admin/plans/{url}', 'Admin\PlanController@update')->name('plans.update');
 
 Route::get('admin', 'Admin\PlanController@index')->name('admin.index');
 
