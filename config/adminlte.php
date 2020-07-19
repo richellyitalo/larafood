@@ -234,6 +234,7 @@ return [
         [
             'text' => 'Planos',
             'url'  => 'admin/plans',
+            'icon' => 'fa fa-list-alt',
         ]
         // [
         //     'text' => 'blog',

@@ -13,7 +13,7 @@
     </ol>
 
     <h1>Planos
-        <a href="{{ route('plans.create') }}" class="btn btn-dark">Novo Plano</a>
+        <a href="{{ route('plans.create') }}" class="btn btn-dark">Novo Plano <i class="fa fa-plus-circle"></i></a>
     </h1>
 @stop
 
