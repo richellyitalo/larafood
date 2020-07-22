@@ -33,6 +33,8 @@ Route::prefix('admin')
         Route::get('plans/{url}/details', 'PlanDetailController@index')->name('plans.details');
         Route::put('plans/{url}/details/{idPlanDetail}', 'PlanDetailController@update')->name('plans.details.update');
         Route::get('plans/{url}/details/{idPlanDetail}/edit', 'PlanDetailController@edit')->name('plans.details.edit');
+        Route::get('plans/{url}/details/{idPlanDetail}/show', 'PlanDetailController@show')->name('plans.details.show');
+        Route::delete('plans/{url}/details/{idPlanDetail}', 'PlanDetailController@destroy')->name('plans.details.destroy');
 
 
         Route::get('/', 'PlanController@index')->name('admin.index');

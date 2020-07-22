@@ -62,10 +62,10 @@
             <span aria-hidden="true">&times;</span>
         </button>
 
-        @if(is_array(session('message')['messages']))
-            {!! implode('<br/>', session('message')['messages']) !!}
+        @if(is_array(session('message')))
+            {!! implode('<br/>', session('message')) !!}
         @else
-            {!! session('message')['messages'] !!}
+            {!! session('message') !!}
         @endif
     </div>
 @endif

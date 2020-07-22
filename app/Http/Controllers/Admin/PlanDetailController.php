@@ -75,4 +75,32 @@ class PlanDetailController extends Controller
         $planDetail->update($request->all());
         return redirect(route('plans.details', $plan->url));
     }
+
+    public function show($urlPlan, $idDetail)
+    {
+        $plan = $this->planRepository->where('url', $urlPlan)->first();
+
+        if (!$plan || !$detail = $plan->details()->find($idDetail)) {
+            return redirect()->back();
+        }
+
+        return view('admin.pages.plans.details.show', compact('plan', 'detail'));
+    }
+
+    public function destroy($urlPlan, $idDetail)
+    {
+        $plan = $this->planRepository->where('url', $urlPlan)->first();
+
+        if (!$plan || !$detail = $plan->details()->find($idDetail)) {
+            return redirect()->back();
+        }
+
+        $detail->delete();
+
+        return redirect()
+            ->route('plans.details', $plan->url)
+            ->with('message', 'Detalhe removido com sucesso');
+    }
+
+
 }
