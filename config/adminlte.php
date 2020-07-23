@@ -240,6 +240,11 @@ return [
             'text' => 'Perfis',
             'url'  => 'admin/profiles',
             'icon' => 'fa fa-id-card',
+        ],
+        [
+            'text' => 'Permissões',
+            'url'  => 'admin/permissions',
+            'icon' => 'fa fa-lock',
         ]
         // [
         //     'text' => 'blog',

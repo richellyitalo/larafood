@@ -39,6 +39,12 @@ Route::prefix('admin')
         Route::delete('plans/{url}/details/{idPlanDetail}', 'PlanDetailController@destroy')->name('plans.details.destroy');
 
         /**
+         * Permissões
+         */
+        Route::any('permissions/search', 'ACL\PermissionController@search')->name('permissions.search');
+        Route::resource('permissions', 'ACL\PermissionController');
+
+        /**
          * Perfis
          */
         Route::any('profiles/search', 'ACL\ProfileController@search')->name('profiles.search');
