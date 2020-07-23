@@ -14,10 +14,10 @@
             <span aria-hidden="true">&times;</span>
         </button>
 
-        @if(is_array(session('success')['messages']))
-            {!! implode('<br/>', session('success')['messages']) !!}
+        @if(is_array(session('success')))
+            {!! implode('<br/>', session('success')) !!}
         @else
-            {!! session('success')['messages'] !!}
+            {!! session('success') !!}
         @endif
     </div>
 @elseif(session('warning'))
@@ -26,10 +26,10 @@
             <span aria-hidden="true">&times;</span>
         </button>
 
-        @if(is_array(session('warning')['messages']))
-            {!! implode('<br/>', session('warning')['messages']) !!}
+        @if(is_array(session('warning')))
+            {!! implode('<br/>', session('warning')) !!}
         @else
-            {!! session('warning')['messages'] !!}
+            {!! session('warning') !!}
         @endif
     </div>
 @elseif(session('info'))
@@ -44,16 +44,16 @@
             {!! session('info')['messages'] !!}
         @endif
     </div>
-@elseif(session('danger'))
+@elseif(session('error'))
     <div class="alert border-0 alert-danger" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
 
-        @if(is_array(session('danger')['messages']))
-            {!! implode('<br/>', session('danger')['messages']) !!}
+        @if(is_array(session('error')))
+            {!! implode('<br/>', session('danger')) !!}
         @else
-            {!! session('danger')['messages'] !!}
+            {!! session('error') !!}
         @endif
     </div>
 @elseif(session('message'))

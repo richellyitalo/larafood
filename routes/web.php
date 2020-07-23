@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')
     ->namespace('Admin')
     ->group(function () {
+        // Planos
         Route::any('plans/search', 'PlanController@search')->name('plans.search');
         Route::get('plans', 'PlanController@index')->name('plans.index');
         Route::get('plans/create', 'PlanController@create')->name('plans.create');
@@ -28,6 +29,7 @@ Route::prefix('admin')
         Route::get('plans/{url}/edit', 'PlanController@edit')->name('plans.edit');
         Route::put('plans/{url}', 'PlanController@update')->name('plans.update');
 
+        // Planos /Detalhes
         Route::post('plans/{url}/details', 'PlanDetailController@store')->name('plans.details.store');
         Route::get('plans/{url}/details/create', 'PlanDetailController@create')->name('plans.details.create');
         Route::get('plans/{url}/details', 'PlanDetailController@index')->name('plans.details');
@@ -35,6 +37,12 @@ Route::prefix('admin')
         Route::get('plans/{url}/details/{idPlanDetail}/edit', 'PlanDetailController@edit')->name('plans.details.edit');
         Route::get('plans/{url}/details/{idPlanDetail}/show', 'PlanDetailController@show')->name('plans.details.show');
         Route::delete('plans/{url}/details/{idPlanDetail}', 'PlanDetailController@destroy')->name('plans.details.destroy');
+
+        /**
+         * Perfis
+         */
+        Route::any('profiles/search', 'ACL\ProfileController@search')->name('profiles.search');
+        Route::resource('profiles', 'ACL\ProfileController');
 
 
         Route::get('/', 'PlanController@index')->name('admin.index');

@@ -235,6 +235,11 @@ return [
             'text' => 'Planos',
             'url'  => 'admin/plans',
             'icon' => 'fa fa-list-alt',
+        ],
+        [
+            'text' => 'Perfis',
+            'url'  => 'admin/profiles',
+            'icon' => 'fa fa-id-card',
         ]
         // [
         //     'text' => 'blog',

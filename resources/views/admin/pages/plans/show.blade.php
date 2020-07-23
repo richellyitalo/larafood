@@ -25,6 +25,9 @@
             </ul>
 
             <div>
+
+                @include('admin.elements.alerts')
+
                 <form action="{{ route('plans.destroy', $plan->url) }}" method="post">
                     @csrf
                     @method('DELETE')
