@@ -22,4 +22,9 @@ class Permission extends Model
         })
         ->paginate();
     }
+
+    public function profiles()
+    {
+        return $this->belongsToMany(Profile::class);
+    }
 }

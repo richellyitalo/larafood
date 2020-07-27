@@ -45,6 +45,11 @@ Route::prefix('admin')
         Route::resource('permissions', 'ACL\PermissionController');
 
         /**
+         * Permissões x Profile
+         */
+        Route::get('profiles/{id}/permissions', 'ACL\PermissionProfileController@permissions')->name('profiles.permissions');
+
+        /**
          * Perfis
          */
         Route::any('profiles/search', 'ACL\ProfileController@search')->name('profiles.search');
